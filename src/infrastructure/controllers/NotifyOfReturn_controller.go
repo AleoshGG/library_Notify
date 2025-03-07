@@ -51,7 +51,7 @@ func (n *NotifyOfReturnController) NotifyOfReturn(c *gin.Context) {
 		return
 	}
 
-	n.service.Run("Gracias por devolver el libro", responseReader.Data[0].Email, responseReader.Data[0].First_name+responseReader.Data[0].Last_name)
+	n.service.Run("Gracias por devolver el libro", responseReader.Data[0].Email, responseReader.Data[0].First_name+" "+responseReader.Data[0].Last_name)
 
 	c.JSON(http.StatusOK, gin.H{
 		"status": true,

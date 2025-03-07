@@ -51,7 +51,7 @@ func (n *NotifyOfLendController) NotifyOfLend(c *gin.Context) {
 		return
 	}
 	
-	n.service.Run("Tu prestamo ha sido registrado, no olvides regresar el libro antes de la fecha: ", responseReader.Data[0].Email, notify.Return_date, responseReader.Data[0].First_name+responseReader.Data[0].Last_name)
+	n.service.Run("Tu prestamo ha sido registrado, no olvides regresar el libro antes de la fecha: ", responseReader.Data[0].Email, notify.Return_date, responseReader.Data[0].First_name+" "+responseReader.Data[0].Last_name)
 
 	c.JSON(http.StatusOK, gin.H{
 		"status": true,
