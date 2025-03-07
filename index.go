@@ -19,5 +19,5 @@ func main() {
 	// Registrar las rutas
 	routes.RegisterRouter(r)
 
-	r.Run() // Sirve y escucha peticiones en 0.0.0.0:8080
+	r.Run(":8001") // Sirve y escucha peticiones en 0.0.0.0:8080
 }

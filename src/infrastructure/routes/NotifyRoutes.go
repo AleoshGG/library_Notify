@@ -1,11 +1,15 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"library-Notify/src/infrastructure/controllers"
+
+	"github.com/gin-gonic/gin"
+)
 
 func RegisterRouter(r *gin.Engine) {
 	notifyRoutes := r.Group("/notify")
 	{
-		notifyRoutes.POST("/lend")
-		notifyRoutes.POST("/return")
+		notifyRoutes.POST("/lend", controllers.NewNotifyOfLendController().NotifyOfLend)
+		notifyRoutes.POST("/return", controllers.NewNotifyOfReturnController().NotifyOfReturn)
 	}
 }
