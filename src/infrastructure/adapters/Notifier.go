@@ -17,10 +17,10 @@ func (n *Notifier) NotifyOfLend(msg string, email string, return_date string, na
     client := resend.NewClient(os.Getenv("APIKEY"))
 
     params := &resend.SendEmailRequest{
-        From:    "onboarding@resend.dev",
+        From:    "onboarding@mylibrary.projectids.com",
         To:      []string{email},
         Html:    "<strong>Hola "+name+"</strong>"+"<p>"+msg+return_date+"</p>",
-        Subject: "Préstamo Realizado",
+        Subject: "Estado de préstamo",
     }
 
     sent, err := client.Emails.Send(params)
@@ -35,10 +35,10 @@ func (n *Notifier) NotifyOfReturn(msg string, email string, name string) {
 	client := resend.NewClient(os.Getenv("APIKEY"))
 
     params := &resend.SendEmailRequest{
-        From:    "onboarding@resend.dev",
+        From:    "onboarding@mylibrary.projectids.com",
         To:      []string{email},
         Html:    "<strong>Hola "+name+"<strong>"+"<p>"+msg+"</p>",
-        Subject: "Préstamo Realizado",
+        Subject: "Estado de la devolución",
     }
 
     sent, err := client.Emails.Send(params)
