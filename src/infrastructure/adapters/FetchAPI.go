@@ -16,7 +16,7 @@ func NewFetchAPI() *FetchAPI {
 }
 
 func (f *FetchAPI) FetchAPI(id_reader int) (domain.Response, error) {
-    URL := "http://localhost:8000/readers/" + strconv.Itoa(id_reader) 
+    URL := "http://100.26.65.193/readers/" + strconv.Itoa(id_reader) 
 
     // Realizar la petición GET
     resp, err := http.Get(URL)

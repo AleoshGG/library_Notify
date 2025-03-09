@@ -10,7 +10,7 @@ import (
 
 func FetchAPI(loan entities.Notify, method string) {
 	// Construir la URL de la petición PATCH
-	URL := "http://localhost:8001/notify/" + method 
+	URL := "http://18.235.164.53/notify/" + method 
 	jsonBody, _ := json.Marshal(loan)
 
 	// Crear la petición PATCH con el body JSON
